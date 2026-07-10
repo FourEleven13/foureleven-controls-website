@@ -107,7 +107,7 @@ export default function Home() {
           <div className="text-gray-300">
             <p><span className="font-semibold text-blue-400">Phone:</span> 484-706-1098</p>
             <p><span className="font-semibold text-blue-400">Email:</span> info@fourelevencontrolsllc.com</p>
-            <p className="mt-2 text-gray-500">Perry County, Pennsylvania</p>
+            <p className="mt-2 text-gray-500">Berks County, Pennsylvania</p>
           </div>
 
         </div>
