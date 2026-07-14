@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 export default function Home() {
   return (
     <main className="min-h-screen bg-black text-white">
+
       {/* Hero Section */}
       <section className="flex min-h-screen flex-col justify-center px-8 md:px-20">
         <motion.div
@@ -14,7 +15,7 @@ export default function Home() {
         >
           {/* Brand Line */}
           <p className="mb-4 text-sm tracking-[0.4em] text-blue-400">
-            FOUR ELEVEN CONTROLS LLC
+            FourEleven Controls LLC
           </p>
 
           <h1 className="text-5xl font-bold leading-tight md:text-7xl">
@@ -48,30 +49,50 @@ export default function Home() {
         <h2 className="text-4xl font-bold">Automation Services</h2>
 
         <div className="mt-10 grid gap-6 md:grid-cols-3">
+
           {[
-            "PLC Programming & Troubleshooting",
-            "SCADA Development",
-            "Operator HMI Design & Modernization",   // ⭐ NEW SERVICE ADDED HERE
-            "Industrial Networking & IT/OT Integration",
-            "Machine Commissioning",
-            "Data Acquisition & MES",
-            "Remote Support"
+            {
+              title: "PLC Programming & Troubleshooting",
+              desc: "Reliable ladder and structured‑text logic built for uptime. From emergency breakdowns to full program rewrites, we keep machines running and operators productive."
+            },
+            {
+              title: "SCADA Development",
+              desc: "Modern SCADA systems designed for clarity, speed, and secure plant‑wide visibility. Dashboards that help operators make decisions — not dig for data."
+            },
+            {
+              title: "Operator HMI Design & Modernization",
+              desc: "Clean, intuitive operator screens built for speed, clarity, and uptime. From PanelView to Ignition Perspective, we modernize HMIs to reduce errors and improve operator efficiency."
+            },
+            {
+              title: "Industrial Networking & IT/OT Integration",
+              desc: "Robust industrial networks engineered for reliability and secure data flow. We bridge IT and OT so your plant floor communicates safely and efficiently."
+            },
+            {
+              title: "Machine Commissioning",
+              desc: "Full‑stack commissioning support — PLC, HMI, drives, networks, and safety. We bring machines online smoothly, verify functionality, and ensure operators are ready for production."
+            },
+            {
+              title: "Data Acquisition & MES",
+              desc: "Real‑time data collection, historian setup, and MES integration that turns raw machine data into actionable insights for smarter operations."
+            },
+            {
+              title: "Remote Support",
+              desc: "Fast, reliable remote troubleshooting for PLCs, HMIs, SCADA, and networks. When downtime hits, we get you back online without waiting for a site visit."
+            }
           ].map((service) => (
             <div
-              key={service}
+              key={service.title}
               className="rounded-xl border border-gray-800 bg-black p-6 hover:border-blue-500 transition-all"
             >
               <h3 className="text-xl font-semibold text-blue-400">
-                {service}
+                {service.title}
               </h3>
               <p className="mt-3 text-gray-400">
-                {service === "Operator HMI Design & Modernization"
-                  ? "Clean, intuitive operator screens built for speed, clarity, and uptime. From PanelView to Ignition Perspective, we modernize HMIs to reduce errors and improve operator efficiency."
-                  : "Practical automation solutions focused on uptime, reliability, and production success."
-                }
+                {service.desc}
               </p>
             </div>
           ))}
+
         </div>
       </section>
 
@@ -107,15 +128,11 @@ export default function Home() {
           <div className="text-gray-300">
             <p><span className="font-semibold text-blue-400">Phone:</span> 484-706-1098</p>
             <p><span className="font-semibold text-blue-400">Email:</span> info@fourelevencontrolsllc.com</p>
-            <p className="mt-2 text-gray-500">Berks County, Pennsylvania</p>
           </div>
 
         </div>
-
-        <p className="text-gray-600 text-sm mt-8">
-          © {new Date().getFullYear()} Four Eleven Controls LLC. All rights reserved.
-        </p>
       </footer>
+
     </main>
   );
 }
